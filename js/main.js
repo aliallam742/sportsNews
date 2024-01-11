@@ -23,34 +23,36 @@ async function contries(contry="eg"){
     var apiResponce = await fetch(`https://newsapi.org/v2/top-headlines?country=${contry}&category=sports&apiKey=71e27b1cbe684bfb80a631ddaea37ef9`)
     var finalResolt = await apiResponce.json();
     allPosts = finalResolt.articles
-    console.log(allPosts)
-    displayData()
+    await displayData()
 }
-console.log(allPosts)
 function displayData(){
-    var cartona = ``; 
-    var images =""
-    for(var i = 0 ; i < allPosts.length ; i++){
-        images=allPosts[i].urlToImage
-        if(images == null){
-            images = "images/pexels-pixabay-46798.jpg"
-        }
-    cartona +=`
-    <div class="col-md-6">
-        <div class="border border-2 border-dark text-center p-3 my-2">
-        <img src="${images}" class="w-100 h-30" >
-            <div class="d-flex align-items-center justify-content-between">
+        return new Promise(function (callback){
+            var cartona = ``; 
+            var images =""
+            for(var i = 0 ; i < allPosts.length ; i++){
+            images=allPosts[i].urlToImage
+            if(images == null){
+                images = "images/1.jpg"
+            }
+            cartona +=`
+            <div class="col-md-6">
+            <div class="border border-2 border-dark text-center p-3 my-2">
+            <img src="${images}" class="w-100 h-30" >
+                <div class="d-flex align-items-center justify-content-between">
 
-                <div class="date">${allPosts[i].publishedAt.slice(0,10)}</div>
-                    <h5>${allPosts[i].author}</h5>
+                    <div class="date">${allPosts[i].publishedAt.slice(0,10)}</div>
+                        <h5>${allPosts[i].author}</h5>
+                    </div>
+                    <p class="py-2 ">${allPosts[i].title}<p>
+                    <button class="btn btn-info text-white" ><a href="${allPosts[i].url}" target="_blank">قراءة المزيد </a></button>
                 </div>
-                <p class="py-2 ">${allPosts[i].title}<p>
-                <button class="btn btn-info text-white" ><a href="${allPosts[i].url}" target="_blank">قراءة المزيد </a></button>
             </div>
-        </div>
-    `
-}
-inner.innerHTML = cartona;
+        `
+    }
+    inner.innerHTML = cartona;
+    callback()
+    })
+    
 }
 contries(contry="eg")
 
