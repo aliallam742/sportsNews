@@ -24,7 +24,7 @@ function contries(contry="eg"){
     myHttp.send();
     myHttp.addEventListener("readystatechange", function (){
     if(this.readyState == 4){
-        allPosts = JSON.parse(myHttp.response).articles;
+        allPosts =Array.from(JSON.parse(myHttp.response).articles);
         displayData()
     }
 });
