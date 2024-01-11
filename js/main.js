@@ -23,7 +23,7 @@ function contries(contry="eg"){
     myHttp.open("GET",`https://newsapi.org/v2/top-headlines?country=${contry}&category=sports&apiKey=71e27b1cbe684bfb80a631ddaea37ef9`);
     myHttp.send();
     myHttp.addEventListener("readystatechange", function (){
-    if(this.readyState == 4){
+    if(myHttp.readyState == 4){
         allPosts =Array.from(JSON.parse(myHttp.response).articles);
         displayData()
     }
