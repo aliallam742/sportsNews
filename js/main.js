@@ -23,7 +23,7 @@ for(var i = 0 ;i < newsLinks.length ; i++){
 async function contries(contry="eg"){
     var apiResponce = await fetch(`https://newsapi.org/v2/top-headlines?country=${contry}&category=sports&apiKey=71e27b1cbe684bfb80a631ddaea37ef9`)
     var finalResolt = await apiResponce.json();
-    allPosts = finalResolt.articles
+    allPosts =Array.from( finalResolt.articles)
     await displayData()
 }
 function displayData(){
