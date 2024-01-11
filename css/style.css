@@ -1,0 +1,124 @@
+@font-face {
+    font-family: allam;
+    src: url(../webfonts/Exo2-Bold.ttf);
+}
+body{
+    font-family: allam;
+    direction: rtl;
+}
+.links li {
+    list-style: none;
+
+}
+.links li a:hover{
+    background-color: #1A73E8;
+    color: aliceblue;
+
+}
+
+.links li a{
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+}
+.links{
+    transition: all 1s;
+    display: flex;
+}
+.logo{
+    border: 4px solid #1A73E8;
+    overflow: hidden;
+    font-size: 25px;
+    color: #1A73E8;
+
+
+}
+.menu{
+    display: none;
+    cursor: pointer;
+}
+.menu div{
+    width: 30px;
+    height: 5px;
+    background-color: #000;
+    margin: 2px;
+
+}
+.logo span{
+    background-color: #1A73E8;
+    padding: 10px; 
+    color: #FFF;
+}
+nav {
+    padding: 5px 0;
+    border-bottom:  3px solid #c8c3c3;
+    position: fixed;
+    background-color: #FFF;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    right: 0;
+}
+header{
+    background-image: url(../images/pexels-pixabay-46798.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+}
+button a {
+    text-decoration: none ;
+    color: #fff;
+    font-size: 18px;
+}
+.contact-icon li {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    list-style: none;
+    text-decoration: none;
+    background-color: #1A73E8;
+    margin: 0 5px;
+}
+.contact-icon li a{
+    color: #FFF;
+}
+li{
+    cursor: pointer;
+}
+.foot{
+    display: flex;
+}
+.active-links{
+    transition: all 1s;
+    transform: translateX(0) !important;
+}
+@media screen and (max-width : 1120px) {
+    .links {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 104%;
+        justify-content: space-between;
+        left: 0;
+        padding: 10px;
+        background-color: #ffffff;
+        transform: translateX(-100%);
+    }
+    .menu{
+        display: block;
+    }
+    .foot{
+        flex-direction: column;
+        text-align: center;
+    }
+    .foot .logo{
+        width: 141px;
+    }
+}
