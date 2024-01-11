@@ -30,6 +30,7 @@ function displayData(){
         return new Promise(function (callback){
             var cartona = ``; 
             var images =""
+            console.log(allPosts)
             for(var i = 0 ; i < allPosts.length ; i++){
             images=allPosts[i].urlToImage
             if(images == null){
