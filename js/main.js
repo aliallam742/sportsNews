@@ -1,3 +1,4 @@
+"use strict"
 var  btnMenu = document.getElementById("btn-menu"); 
 var linksActive = document.getElementById("links-active");
 
@@ -54,7 +55,7 @@ function displayData(){
     })
     
 }
-contries(contry="eg")
+contries("eg")
 
 // var myHttp = new XMLHttpRequest();
 // var data =[];
