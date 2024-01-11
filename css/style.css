@@ -98,6 +98,9 @@ li{
     transition: all 1s;
     transform: translateX(0) !important;
 }
+.h-30{
+    height: 300px;
+}
 @media screen and (max-width : 1120px) {
     .links {
         width: 100%;
