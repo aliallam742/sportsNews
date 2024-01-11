@@ -31,7 +31,7 @@ function contries(contry="eg"){
 }
 function displayData(){
     var cartona = ``; 
-for(var i = 0 ; i < allPosts.length ; i++){
+for(var i = 0 ; i < 15 ; i++){
     cartona +=`
     <div class="col-md-6">
         <div class="border border-2 border-dark text-center p-3 my-2">
